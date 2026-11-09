@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Під час розробки (dotnet run) відкривається консоль із назвами емоцій.
+         У Release (публікація) консолі немає. -->
+    <OutputType>Exe</OutputType>
+    <OutputType Condition="'$(Configuration)' == 'Release'">WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+    <RootNamespace>DesktopPet</RootNamespace>
+    <AssemblyName>DesktopPet</AssemblyName>
+
+    <!-- іконка exe -->
+    <ApplicationIcon>app.ico</ApplicationIcon>
+
+    <!-- інформація у властивостях файлу -->
+    <Product>Desktop Pet</Product>
+    <AssemblyTitle>Desktop Pet</AssemblyTitle>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <!-- публікація: один exe, .NET усередині (користувачам нічого ставити не треба) -->
+  <PropertyGroup>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+</Project>
